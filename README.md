@@ -4,6 +4,8 @@
 
 [Website](https://a2agent.me/) · [Documentation](https://docs.a2agent.me/) · [Model catalog](https://docs.a2agent.me/models/overview) · [Service status](https://a2agent.me/status) · [Dashboard](https://a2agent.me/dashboard)
 
+[![A2Agent website overview](assets/a2agent-overview.jpg)](https://a2agent.me/)
+
 ## Quick start
 
 Create an API key in the dashboard, then send an OpenAI-compatible request:
