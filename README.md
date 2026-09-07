@@ -1,5 +1,7 @@
 # A2Agent
 
+English | [简体中文](README.zh-CN.md) | [日本語](README.ja.md) | [한국어](README.ko.md)
+
 **One API gateway for GLM, Kimi, DeepSeek, Qwen, and MiniMax, with OpenAI- and Anthropic-compatible endpoints.**
 
 [Website](https://a2agent.me/) · [Documentation](https://docs.a2agent.me/) · [Model catalog](https://docs.a2agent.me/models/overview) · [Pricing](https://docs.a2agent.me/models/pricing) · [Service status](https://a2agent.me/status) · [Dashboard](https://a2agent.me/dashboard)
@@ -74,5 +76,3 @@ Never commit an API key. Use environment variables or your operating system's cr
 - Technical integration bugs and documentation corrections: [GitHub Issues](https://github.com/A2agent-ai/a2agent-integrations/issues)
 - Account, top-up, and billing questions: use the support channel listed in the [A2Agent documentation](https://docs.a2agent.me/account/status#contacting-support)
 - Security vulnerabilities: follow the private reporting instructions in [SECURITY.md](https://github.com/A2agent-ai/a2agent-integrations/blob/main/SECURITY.md)
-
-[简体中文](README.zh-CN.md)

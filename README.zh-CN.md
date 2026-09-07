@@ -1,8 +1,12 @@
 # A2Agent
 
+[English](README.md) | 简体中文 | [日本語](README.ja.md) | [한국어](README.ko.md)
+
 **通过一个兼容 OpenAI 与 Anthropic 的 API 网关，统一访问 GLM、Kimi、DeepSeek、Qwen 和 MiniMax。**
 
 [官网](https://a2agent.me/) · [文档](https://docs.a2agent.me/) · [模型目录](https://docs.a2agent.me/models/overview) · [定价](https://docs.a2agent.me/models/pricing) · [服务状态](https://a2agent.me/status) · [控制台](https://a2agent.me/dashboard)
+
+[![A2Agent 官网概览](assets/a2agent-overview.jpg)](https://a2agent.me/)
 
 ## 用户与开发者优惠
 
@@ -40,12 +44,35 @@ curl https://api.a2agent.me/v1/chat/completions \
   }'
 ```
 
-请先通过 `GET https://api.a2agent.me/v1/models` 获取当前可用的模型 ID。Pi、Hermes 和 Cline 的配置教程、示例与验证状态见 [a2agent-integrations](https://github.com/A2agent-ai/a2agent-integrations)。
+选择模型前，请获取当前可用的模型 ID：
 
-## 隐私、安全与支持
+```bash
+curl https://api.a2agent.me/v1/models \
+  -H "Authorization: Bearer YOUR_A2AGENT_KEY"
+```
 
-请求正文通常不会被有意持久化，但临时处理、调试、安全调查及法律义务等情况可能构成例外。发送敏感数据前，请阅读最新的[隐私政策](https://docs.a2agent.me/help/privacy)。切勿将真实 API Key 提交到 GitHub。
+## 支持的接口
 
-技术集成和文档问题请提交 [GitHub Issue](https://github.com/A2agent-ai/a2agent-integrations/issues)；账号、充值和账单问题请使用[官网文档列出的支持渠道](https://docs.a2agent.me/account/status#contacting-support)。
+- OpenAI Chat Completions：`POST /v1/chat/completions`
+- 兼容 Anthropic Messages 的请求
+- 模型发现：`GET /v1/models`
 
-[English](README.md)
+## 客户端集成
+
+[A2Agent 集成仓库](https://github.com/A2agent-ai/a2agent-integrations)提供以下客户端的版本化教程、示例和兼容性测试：
+
+- [Pi Coding Agent](https://github.com/A2agent-ai/a2agent-integrations/blob/main/docs/clients/pi.md)
+- [Hermes Agent](https://github.com/A2agent-ai/a2agent-integrations/blob/main/docs/clients/hermes-cli.md)
+- [Cline](https://github.com/A2agent-ai/a2agent-integrations/blob/main/docs/clients/cline.md)
+
+## 隐私与安全
+
+请求正文通常不会被有意持久化，但临时处理、调试、安全调查及法律义务等情况可能构成例外。发送敏感数据前，请阅读最新的[隐私政策](https://docs.a2agent.me/help/privacy)。
+
+切勿提交真实 API Key。请使用环境变量或操作系统的凭据存储。
+
+## 支持
+
+- 技术集成缺陷和文档修正：[GitHub Issues](https://github.com/A2agent-ai/a2agent-integrations/issues)
+- 账号、充值和账单问题：请使用 [A2Agent 文档列出的支持渠道](https://docs.a2agent.me/account/status#contacting-support)
+- 安全漏洞：请按照 [SECURITY.md](https://github.com/A2agent-ai/a2agent-integrations/blob/main/SECURITY.md) 中的说明私下报告
