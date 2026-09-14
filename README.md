@@ -4,7 +4,7 @@ English | [简体中文](README.zh-CN.md) | [日本語](README.ja.md) | [한국�
 
 **One API gateway for GLM, Kimi, DeepSeek, Qwen, and MiniMax, with OpenAI- and Anthropic-compatible endpoints.**
 
-[Website](https://a2agent.me/) · [Documentation](https://docs.a2agent.me/) · [Model catalog](https://docs.a2agent.me/models/overview) · [Pricing](https://docs.a2agent.me/models/pricing) · [Service status](https://a2agent.me/status) · [Dashboard](https://a2agent.me/dashboard)
+[Website](https://a2agent.me/) · [Documentation](https://docs.a2agent.me/) · [Model catalog](https://a2agent.me/models) · [Pricing](https://a2agent.me/pricing) · [Service status](https://a2agent.me/status) · [Dashboard](https://a2agent.me/dashboard)
 
 [![A2Agent website overview](assets/a2agent-overview.jpg)](https://a2agent.me/)
 
