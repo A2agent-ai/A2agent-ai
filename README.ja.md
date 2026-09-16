@@ -2,37 +2,25 @@
 
 [English](README.md) | [简体中文](README.zh-CN.md) | 日本語 | [한국어](README.ko.md)
 
-**OpenAI および Anthropic 互換のエンドポイントを備えた、GLM、Kimi、DeepSeek、Qwen、MiniMax 向けの統合 API ゲートウェイ。**
+**OpenAI、Anthropic、Gemini 互換インターフェースを備えた、GLM、Kimi、DeepSeek、Qwen、MiniMax 向けの統合 API ゲートウェイ。**
 
-[公式サイト](https://a2agent.me/) · [ドキュメント](https://docs.a2agent.me/) · [モデル一覧](https://docs.a2agent.me/models/overview) · [料金](https://docs.a2agent.me/models/pricing) · [稼働状況](https://a2agent.me/status) · [ダッシュボード](https://a2agent.me/dashboard)
+[公式サイト](https://a2agent.me/) · [ドキュメント](https://docs.a2agent.me/) · [モデル一覧](https://a2agent.me/models) · [料金](https://a2agent.me/pricing) · [連携](https://a2agent.me/integrations) · [稼働状況](https://a2agent.me/status) · [ダッシュボード](https://a2agent.me/dashboard)
 
 [![A2Agent 公式サイトの概要](assets/a2agent-overview.jpg)](https://a2agent.me/)
 
-## ユーザーと開発者向けの特典
+## A2Agent の機能
 
-- 条件を満たす新規アカウントには、**5 米ドル分の API お試しクレジット**が付与されます。
-- 対応モデルの料金は通常、**各提供元が公開する API 定価より 20%～50% 低く**設定されています。
-- 対象のサブスクリプションには、**3 日間の無料トライアル**が含まれる場合があります。
-- 現在、一部のプランでは **60 米ドルで 80 米ドル分**、または **100 米ドルで 140 米ドル分**を利用できます。
+- 1 つの API キーで、対応する GLM、Kimi、DeepSeek、Qwen、MiniMax モデルにアクセスできます。
+- OpenAI Chat Completions と Responses、Anthropic Messages、Gemini GenerateContent インターフェースに対応します。
+- モデル検出、ストリーミング、ツール呼び出し、コーディングエージェント連携を提供します。
+- モデル料金とサービスの稼働状況をリアルタイムで確認できます。
+- 従量課金に加え、高い同時実行数や大規模利用向けの法人オプションを提供します。
 
-[アカウントを作成](https://a2agent.me/dashboard)するか、購入前に[最新の料金ページ](https://docs.a2agent.me/models/pricing)をご確認ください。提供状況、モデル料金、プランの特典、適用条件は変更される場合があります。ダッシュボードと公開されているプログラム規約を優先してください。
-
-## A2Agent とのパートナーシップ
-
-オープンソースのメンテナー、コーディングエージェントの開発チーム、API ツール、開発者コミュニティとの協力を歓迎します。
-
-- 条件を満たす紹介パートナーは、対象となる紹介先のチャージに対して **5%～10% のトークン還元**を受けられる場合があります。
-- オープンソース開発者には、リポジトリの活動状況、スター数、技術的な適合性、連携に期待される価値に応じて、**20～100 米ドル分の API クレジット**を提供する場合があります。
-- 影響力の大きいプロジェクトには、**毎月継続して付与される API クレジット**と互換性サポートを検討します。
-- OpenAI/Anthropic エンドポイントのテスト、ストリーミング、ツール呼び出し、モデル検出、連携ドキュメントの作成を支援できます。
-
-技術的な連携については、[Integration Request](https://github.com/A2agent-ai/a2agent-integrations/issues/new?template=integration_request.yml) を作成してください。スポンサーシップ、紹介提携、アカウントのクレジットに関する相談には、[A2Agent ドキュメント](https://docs.a2agent.me/account/status#contacting-support)に記載された非公開のサポート窓口をご利用ください。公開 PR に商取引の条件や非公開のアカウント情報を記載しないでください。
-
-クレジットはプロモーション用で、譲渡や換金はできません。承認および継続的な支援は、プロジェクトの審査と現行のプログラム規約に従います。
+詳しい製品概要は [A2Agent とは？](https://a2agent.me/what-is-a2agent) をご覧ください。A2Agent は Agent2Agent（A2A）プロトコルとは関係ありません。
 
 ## クイックスタート
 
-ダッシュボードで API キーを作成し、OpenAI 互換のリクエストを送信します。
+[ダッシュボード](https://a2agent.me/dashboard)で API キーを作成し、OpenAI 互換リクエストを送信します。
 
 ```bash
 curl https://api.a2agent.me/v1/chat/completions \
@@ -44,7 +32,7 @@ curl https://api.a2agent.me/v1/chat/completions \
   }'
 ```
 
-モデルを選ぶ前に、現在利用可能なモデル ID を取得してください。
+モデルを選ぶ前に、アカウントで利用可能なモデル ID を取得してください。
 
 ```bash
 curl https://api.a2agent.me/v1/models \
@@ -53,26 +41,47 @@ curl https://api.a2agent.me/v1/models \
 
 ## 対応インターフェース
 
-- OpenAI Chat Completions: `POST /v1/chat/completions`
-- Anthropic Messages 互換のリクエスト
-- モデル検出: `GET /v1/models`
+| インターフェース | エンドポイント |
+| --- | --- |
+| OpenAI Chat Completions | `POST /v1/chat/completions` |
+| OpenAI Responses | `POST /v1/responses` |
+| Anthropic Messages | `POST /v1/messages` |
+| Gemini GenerateContent | `POST /v1beta/models/{model}:generateContent` |
+| モデル検出 | `GET /v1/models` |
+
+利用できる機能はモデルや上流プラットフォームによって異なります。モデル ID と機能は[最新のモデル一覧](https://a2agent.me/models)、現在の料金は[料金ページ](https://a2agent.me/pricing)で確認してください。
 
 ## クライアント連携
 
-[A2Agent 連携リポジトリ](https://github.com/A2agent-ai/a2agent-integrations)では、次のクライアント向けに、バージョン管理されたガイド、サンプル、互換性テストを提供しています。
+次のツール向けセットアップガイドを公開しています。
 
-- [Pi Coding Agent](https://github.com/A2agent-ai/a2agent-integrations/blob/main/docs/clients/pi.md)
-- [Hermes Agent](https://github.com/A2agent-ai/a2agent-integrations/blob/main/docs/clients/hermes-cli.md)
-- [Cline](https://github.com/A2agent-ai/a2agent-integrations/blob/main/docs/clients/cline.md)
+- [Claude Code](https://a2agent.me/integrations/claude-code)
+- [Codex CLI](https://a2agent.me/integrations/codex-cli)
+- [Cline](https://a2agent.me/integrations/cline)
+- [Roo Code](https://a2agent.me/integrations/roo-code)
+- [Kilo Code](https://a2agent.me/integrations/kilo-code)
+- [Cursor](https://a2agent.me/integrations/cursor)
+
+[A2Agent 連携リポジトリ](https://github.com/A2agent-ai/a2agent-integrations)には、バージョン管理されたガイド、サンプル、互換性テストもあります。
+
+## 最新情報と機械可読データ
+
+- [モデル一覧](https://a2agent.me/models)と[料金](https://a2agent.me/pricing)
+- [サービス稼働状況](https://a2agent.me/status)
+- [llms.txt](https://a2agent.me/llms.txt) と [llms-full.txt](https://a2agent.me/llms-full.txt)
+- [ブログ](https://a2agent.me/blog)と[サイトマップ](https://a2agent.me/sitemap.xml)
+
+モデル、料金、制限、キャンペーンは変更される場合があります。最新のウェブサイトとダッシュボードを基準としてください。
 
 ## プライバシーとセキュリティ
 
-通常、リクエスト本文を意図的に永続保存することはありません。ただし、一時的な処理、デバッグ、セキュリティ対応、法的義務などにより例外が生じる場合があります。機密情報を送信する前に、最新の[プライバシーポリシー](https://docs.a2agent.me/help/privacy)をご確認ください。
+通常、リクエスト本文を意図的に永続保存することはありません。ただし、一時処理、ユーザーが依頼したデバッグ、セキュリティ対応、法的義務などの例外があります。利用前に最新の[プライバシーポリシー](https://a2agent.me/privacy)、[利用規約](https://a2agent.me/terms)、[返金ポリシー](https://a2agent.me/refund-policy)をご確認ください。
 
 API キーをコミットしないでください。環境変数または OS の認証情報ストアを利用してください。
 
-## サポート
+## パートナーとサポート
 
-- 技術的な連携の不具合やドキュメントの修正: [GitHub Issues](https://github.com/A2agent-ai/a2agent-integrations/issues)
-- アカウント、チャージ、請求に関する質問: [A2Agent ドキュメント](https://docs.a2agent.me/account/status#contacting-support)に記載されたサポート窓口をご利用ください
-- セキュリティ上の脆弱性: [SECURITY.md](https://github.com/A2agent-ai/a2agent-integrations/blob/main/SECURITY.md) の手順に従い、非公開で報告してください
+- パートナー・紹介情報：[パートナープログラム](https://a2agent.me/partners)
+- 技術的な連携不具合とドキュメント修正：[GitHub Issues](https://github.com/A2agent-ai/a2agent-integrations/issues)
+- アカウントと請求のサポート：[About ページ](https://a2agent.me/about)に記載された連絡先をご利用ください
+- セキュリティ上の脆弱性：[SECURITY.md](https://github.com/A2agent-ai/a2agent-integrations/blob/main/SECURITY.md) の手順に従い非公開で報告してください
