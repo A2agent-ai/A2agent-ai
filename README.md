@@ -223,7 +223,7 @@ For versioned examples and compatibility tests, visit [`A2agent-ai/a2agent-integ
 
 | Discover | Build | Operate |
 | --- | --- | --- |
-| [What is A2Agent?](https://a2agent.me/what-is-a2agent) | [Developer documentation](https://docs.a2agent.me/) | [Service status](https://a2agent.me/status) |
+| [What is A2Agent?](WHAT_IS_A2AGENT.md) | [Developer documentation](https://docs.a2agent.me/) | [Service status](https://a2agent.me/status) |
 | [Model catalog](https://a2agent.me/models) | [Integration guides](https://a2agent.me/integrations) | [Privacy Policy](https://a2agent.me/privacy) |
 | [Pricing](https://a2agent.me/pricing) | [Integration repository](https://github.com/A2agent-ai/a2agent-integrations) | [Terms of Service](https://a2agent.me/terms) |
 | [Blog](https://a2agent.me/blog) | [llms.txt](https://a2agent.me/llms.txt) · [llms-full.txt](https://a2agent.me/llms-full.txt) | [Refund Policy](https://a2agent.me/refund-policy) |
