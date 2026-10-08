@@ -66,6 +66,19 @@ Use OpenAI, Anthropic, or Gemini-compatible interfaces to build with leading AI 
 > [!NOTE]
 > A2Agent is a multi-model API gateway by Omnimodel Technology Limited. It is not affiliated with the Agent2Agent (A2A) protocol.
 
+## 💳 Current top-up offer
+
+As of October 8, 2026, A2Agent has no free tier. The [pricing page](https://a2agent.me/pricing) lists a $1 minimum top-up with no top-up fee, plus these bonus credits:
+
+| Top-up | First top-up bonus | Later top-up bonus |
+| --- | --- | --- |
+| $10 | +$10 | — |
+| $60 | +$20 | +$20 |
+| $100 | +$30 | +$30 |
+| $200+ | +$50 | +$50 |
+
+Usage is billed per token. Bonus credits are non-refundable; unused purchased credits may be refundable within seven days under the [Refund Policy](https://a2agent.me/refund-policy). Check the live pricing page and checkout for current terms.
+
 ## 🤔 Why A2Agent?
 
 | The usual friction | With A2Agent |
